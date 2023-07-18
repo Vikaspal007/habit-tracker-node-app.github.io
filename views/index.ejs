@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+    <style>
+      body{
+        background-color: white;
+        text-align: center;
+      }
+      h1{
+        color: blue;
+        font-weight: bolder;
+      }
+      ul{
+        color: brown;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1>Habit Tracker</h1>
+
+    <form method="POST" action="/habits">
+      <input type="text" name="name" placeholder="Habit name" required />
+      <input type="text" name="description" placeholder="Description" />
+      <button type="submit">Add Habit</button>
+    </form>
+
+    <ul>
+      <% habits.forEach((habit) => { %>
+        <li>
+          <span class="<%= habit.completed ? 'completed' : '' %>">
+            <%= habit.name %>
+          </span>
+          <form method="POST" action="/habits/<%= habit._id %>?_method=PUT" class="toggle-form">
+            <button type="submit">
+              <%= habit.completed ? 'Unmark' : 'Mark' %> as Completed
+            </button>
+          </form>
+        </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

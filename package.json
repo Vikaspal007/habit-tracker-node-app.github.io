@@ -1,0 +1,22 @@
+{
+  "homepage": "https://Vikaspal007.github.io",
+  "name": "habit-tracker-node-app",
+  "version": "1.0.0",
+  "description": "An application to track your habit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "deploy": "gh-pages -b master -d build"
+  },
+  "author": "Vikas Pal",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "gh-pages": "^5.0.0",
+    "mongoose": "^5.9.7"
+  }
+}
